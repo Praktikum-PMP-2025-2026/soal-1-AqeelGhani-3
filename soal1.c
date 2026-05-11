@@ -31,8 +31,15 @@ void PrintMaxVertex(int idMaks){
 }
 
 void PrintIsolated(int N, int degree[]){
+    int isolated = 1;
     printf("ISOLATED");
-    for (int i = 0 ; i<N; i++) if (degree[i]==0) printf(" %d", i);
+    for (int i = 0 ; i<N; i++){
+        if (degree[i]==0){
+            printf(" %d", i);
+            isolated = 0;
+        }
+    }
+    if (isolated) printf(" NONE");
 }
 
 
